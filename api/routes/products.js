@@ -6,6 +6,7 @@ const router = express.Router();
 
 const Product = require('../models/product');
 const mongoose = require('mongoose');
+const checkAuth = require('../middleware/check-auth');
 
 router.get('/', (req, res, next) => {
   Product.find()
@@ -83,7 +84,7 @@ router.get('/:productId', (req, res, next) => {
  * [{"propName": "price", "value":1111},{"propName": "name", "value":"change name"}]
  *
  */
-router.patch('/:productId', (req, res, next) => {
+router.patch('/:productId', checkAuth, (req, res, next) => {
   const id = req.params.productId;
   const updateOps = {};
   for (const ops of req.body) {
