@@ -1,11 +1,11 @@
 {
-  "name": "rest-shop",
+  "name": "sso",
   "version": "1.0.0",
   "description": "nodejs rest api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "mocha --timeout 3000 --recursive"
   },
   "keywords": [
     "node",
@@ -23,6 +23,9 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.4"
   }
 }

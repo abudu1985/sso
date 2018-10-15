@@ -8,7 +8,7 @@ const Product = require('../models/product');
 const mongoose = require('mongoose');
 const checkAuth = require('../middleware/check-auth');
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => {     // checkAuth,
   Product.find()
     .select('name price _id')
     .exec()

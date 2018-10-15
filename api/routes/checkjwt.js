@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -14,7 +13,7 @@ router.post('/', (req, res, next) => {
        });
      }
   } catch(err) {
-    console.log(err);
+    //console.log(err);
     res.status(500).json({error: err});
   }
 });

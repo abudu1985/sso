@@ -66,7 +66,7 @@ router.post('/login', (req, res, next) => {
             userId: user[0]._id
           }, process.env.JWT_KEY,
             {
-              expiresIn: 60
+              expiresIn: 120
             });
           return res.status(200).json({
             message: 'Auth successful',

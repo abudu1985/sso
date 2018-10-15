@@ -11,9 +11,15 @@ const productRoutes = require('./api/routes/products');
 const userRoutes = require('./api/routes/user');
 const checkjwtRoutes = require('./api/routes/checkjwt');
 
-mongoose.connect("mongodb://igor:" + process.env.MONGO_ATLAS_PW + "@node-rest-shard-00-00-xjwsw.mongodb.net:27017,node-rest-shard-00-01-xjwsw.mongodb.net:27017,node-rest-shard-00-02-xjwsw.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shard-0&authSource=admin&retryWrites=true",
-  { useNewUrlParser: true }
-);
+if(process.env.NODE_ENV === 'test') {
+  mongoose.connect("mongodb://127.0.0.1/new",{ useNewUrlParser: true }
+  );
+} else {
+  mongoose.connect("mongodb://igor:" + process.env.MONGO_ATLAS_PW + "@node-rest-shard-00-00-xjwsw.mongodb.net:27017,node-rest-shard-00-01-xjwsw.mongodb.net:27017,node-rest-shard-00-02-xjwsw.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shard-0&authSource=admin&retryWrites=true",
+    { useNewUrlParser: true }
+  );
+}
+
 mongoose.set('useCreateIndex', true);
 // it for test
 // app.use((req, res, next) => {
