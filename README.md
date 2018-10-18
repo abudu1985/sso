@@ -8,21 +8,21 @@ http://localhost:3000/products; </br>
 GET
 </br>
 
-http://localhost:3000/user/signup </br>
+http://localhost:3000/api/user/signup </br>
 POST  {
       "email":"a@ukr.net",
       "password":"123456"
       }
 <br>
 
-http://localhost:3000/user/login </br>
+http://localhost:3000/api/user/login </br>
 POST  {
       "email":"a@ukr.net",
       "password":"123456"
       }
 </br>      
 
-http://localhost:3000/checkjwt
+http://localhost:3000/api/checkjwt
 POST
 headers {Authorization: ZXZXZsometokenZXZX}
 
